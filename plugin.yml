@@ -1,0 +1,9 @@
+main: com.kyloka.forcePlugin.Main
+name: ForcePlugin
+version: 2.0
+description: Pushes other players
+authors: [nayoshi12, ZlokkiN]
+
+commands:
+  test:
+    description: potato
