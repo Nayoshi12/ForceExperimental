@@ -21,7 +21,9 @@ public class ForceItem {
     private List<Entity> entityList = new ArrayList<>();
     private Location location;
     private boolean unbreakable;
-
+    private int durability;
+    private List<String> keyword = new ArrayList<>();
+    public void setDurability(int dur){durability = dur;}
     public void addEntity(Entity ent){
         entityList.add(ent);
     }
@@ -62,6 +64,17 @@ public class ForceItem {
     public String getName(){
         return name;
     }
+    public int getDurability(){return durability;}
+    public void setKeyword(List<String> keys){
+        keyword.clear();
+        keyword = keys;
+    }
+    public void addKeyword(String key){
+        keyword.add(key);
+    }
+    public List<String> getKeyword(){
+        return keyword;
+    }
     public ItemStack createMaterial() {
 
 
@@ -71,9 +84,13 @@ public class ForceItem {
         itemMeta.setDisplayName(name);
         if (!lore.isEmpty()) {
             itemMeta.setLore(lore);
+
         }
         if (unbreakable) {
             itemMeta.spigot().setUnbreakable(true);
+        }
+        if (durability != 0){
+            item.setDurability((byte) durability);
         }
 
         item.setItemMeta(itemMeta);

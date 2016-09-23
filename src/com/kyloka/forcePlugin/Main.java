@@ -10,16 +10,21 @@ import org.bukkit.plugin.java.JavaPlugin;
  * Created by Matthew on 9/21/2016.
  */
 public class Main extends JavaPlugin {
+    public static Main instance;
+
     @Override
     public void onEnable() {
         PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(new EventActivateForce(),this);
         getCommand("test").setExecutor(new Commandforce());
+        instance = this;
     }
 
     @Override
     public void onDisable() {
         super.onDisable();
     }
-
+    public static Main getInstance(){
+        return instance;
+    }
 }
