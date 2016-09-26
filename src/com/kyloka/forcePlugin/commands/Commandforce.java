@@ -17,13 +17,20 @@ public class Commandforce implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        if (command.getName().equalsIgnoreCase("test")) {
+        if (command.getName().equalsIgnoreCase("lightsaber") && sender.isOp()) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage("Fuck you");
             }
             Player target = (Player) sender;
 
             target.getInventory().addItem(Weapons.redLightsaberHandle().createMaterial());
+            target.getInventory().addItem(Weapons.blueLightsaberHandle().createMaterial());
+            target.getInventory().addItem(Weapons.greenLightsaberHandle().createMaterial());
+            target.getInventory().addItem(Weapons.purpleLightsaberHandle().createMaterial());
+
+        }
+        if (command.getName().equalsIgnoreCase("lightsaber") && !sender.isOp()) {
+            sender.sendMessage(ChatColor.RED + "You have no access to this command.");
 
         }
         return false;

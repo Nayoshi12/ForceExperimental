@@ -16,7 +16,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(new EventActivateForce(),this);
-        getCommand("test").setExecutor(new Commandforce());
+        getCommand("lightsaber").setExecutor(new Commandforce());
         instance = this;
     }
 

@@ -5,5 +5,5 @@ description: Pushes other players
 authors: [nayoshi12, ZlokkiN]
 
 commands:
-  test:
-    description: potato
+  lightsaber:
+    description: lightsabers will be summoned
