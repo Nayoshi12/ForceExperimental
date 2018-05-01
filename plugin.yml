@@ -1,4 +1,4 @@
-main: com.kyloka.forcePlugin.Main
+main: com.kyloka.forcePlugin.LightSaberPlugin
 name: ForcePlugin
 version: 2.0
 description: Pushes other players

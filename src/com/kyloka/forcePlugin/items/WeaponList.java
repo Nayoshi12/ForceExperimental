@@ -6,11 +6,15 @@ import org.bukkit.Material;
 /**
  * Created by Matthew-PC on 5/1/2018.
  */
-public enum WeaponHandle {
-    RED("§4Red §fLightsaber","red",Material.DIAMOND_SWORD,33,true),
-    BLUE("§1Blue §fLightsaber","blue",Material.DIAMOND_SWORD,33,true),
-    PURPLE("§5Purple §fLightsaber","purple",Material.DIAMOND_SWORD,33,true),
-    GREEN("§2Green §fLightsaber","green",Material.DIAMOND_SWORD,33,true);
+public enum WeaponList {
+    RED_HANDLE("§4Red §fLightsaber","red",Material.DIAMOND_SWORD,33,true),
+    BLUE_HANDLE("§1Blue §fLightsaber","blue",Material.DIAMOND_SWORD,33,true),
+    PURPLE_HANDLE("§5Purple §fLightsaber","purple",Material.DIAMOND_SWORD,33,true),
+    GREEN_HANDLE("§2Green §fLightsaber","green",Material.DIAMOND_SWORD,33,true),
+    RED("§4Red §fLightsaber","red",Material.DIAMOND_SWORD,2,true),
+    BLUE("§1Blue §fLightsaber","blue",Material.DIAMOND_SWORD,10,true),
+    PURPLE("§5Purple §fLightsaber","purple",Material.DIAMOND_SWORD,25,true),
+    GREEN("§2Green §fLightsaber","green",Material.DIAMOND_SWORD,18,true);
 
     private String name;
     private String key;
@@ -18,7 +22,7 @@ public enum WeaponHandle {
     private int durability;
     private boolean isUnbreakable;
 
-    WeaponHandle(String name,String key, Material material,int durability,boolean isUnbreakable){
+    WeaponList(String name, String key, Material material, int durability, boolean isUnbreakable){
         this.name = name;
         this.key = key;
         this.material = material;

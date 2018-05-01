@@ -87,7 +87,7 @@ public class ForceItem {
 
         }
         if (unbreakable) {
-            itemMeta.spigot().setUnbreakable(true);
+            itemMeta.setUnbreakable(true);
         }
         if (durability != 0){
             item.setDurability((byte) durability);

@@ -9,22 +9,24 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * Created by Matthew on 9/21/2016.
  */
-public class Main extends JavaPlugin {
-    public static Main instance;
+public class LightSaberPlugin extends JavaPlugin {
 
+    private PluginManager pluginManager;
     @Override
     public void onEnable() {
-        PluginManager pm = Bukkit.getServer().getPluginManager();
-        pm.registerEvents(new EventActivateForce(),this);
-        getCommand("lightsaber").setExecutor(new Commandforce());
-        instance = this;
-    }
+        pluginManager = Bukkit.getServer().getPluginManager();
+        pluginManager.registerEvents(new EventActivateForce(this),this);
+        getCommand("lightsaber").setExecutor(new Commandforce(this));
 
+    }
+    public PluginManager getPluginManager(){
+        return pluginManager;
+    }
     @Override
     public void onDisable() {
         super.onDisable();
     }
-    public static Main getInstance(){
-        return instance;
-    }
+//    public static LightSaberPlugin getInstance(){
+//        return instance;
+//    }
 }
