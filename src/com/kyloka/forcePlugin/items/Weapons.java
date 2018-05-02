@@ -8,7 +8,9 @@ import org.bukkit.Material;
 /**
  * Created by Matthew on 9/23/2016.
  */
+@Deprecated
 public class Weapons {
+
     public static ForceItem redlightsaber(){
         ForceItem item = new ForceItem();
         item.setName("§4Red §fLightsaber");

@@ -17,6 +17,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.EnumSet;
 import java.util.List;
 
 /**
@@ -65,41 +66,18 @@ public class EventActivateForce implements Listener {
                         lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 100, 5));
                     }
                 }
-                if (ChatColor.stripColor(e.getItem().getItemMeta().getDisplayName()).equals(ChatColor.stripColor(WeaponList.RED.getForceItem().getName()))) {
 
-                    List<Player> listOfPlayers = Push.getPlayerInRadius(target, 4);
-                    for (Player lmaoset : listOfPlayers) {
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 10));
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 100, 4));
+                EnumSet<WeaponList> weaponListEnumSet = EnumSet.allOf(WeaponList.class);
+
+                for(WeaponList weaponList:weaponListEnumSet){
+                    if(ChatColor.stripColor(e.getItem().getItemMeta().getDisplayName()).equals(ChatColor.stripColor(weaponList.getForceItem().getName()))){
+                        List<Player> listOfPlayers = Push.getPlayerInRadius(target,4);
+                        for(Player player:listOfPlayers){
+                            for(PotionEffect potionEffect:weaponList.getWeaponEffect().getPotionEffects()){
+                                player.addPotionEffect(potionEffect);
+                            }
+                        }
                     }
-
-                }
-                if (ChatColor.stripColor(e.getItem().getItemMeta().getDisplayName()).equals(ChatColor.stripColor(WeaponList.BLUE.getForceItem().getName()))) {
-
-                    List<Player> listOfPlayers = Push.getPlayerInRadius(target, 4);
-                    for (Player lmaoset : listOfPlayers) {
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 10));
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 4));
-                    }
-
-                }
-                if (ChatColor.stripColor(e.getItem().getItemMeta().getDisplayName()).equals(ChatColor.stripColor(WeaponList.GREEN.getForceItem().getName()))) {
-
-                    List<Player> listOfPlayers = Push.getPlayerInRadius(target, 4);
-                    for (Player lmaoset : listOfPlayers) {
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 100, 10));
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 100, 4));
-                    }
-
-                }
-                if (ChatColor.stripColor(e.getItem().getItemMeta().getDisplayName()).equals(ChatColor.stripColor(WeaponList.PURPLE.getForceItem().getName()))) {
-
-                    List<Player> listOfPlayers = Push.getPlayerInRadius(target, 4);
-                    for (Player lmaoset : listOfPlayers) {
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 100, 10));
-                        lmaoset.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 100, 4));
-                    }
-
                 }
             }
         }
@@ -109,8 +87,8 @@ public class EventActivateForce implements Listener {
     public void unsheatheEvent(PlayerInteractEvent e) {
         Player player = e.getPlayer();
         Action act = e.getAction();
-        ForceItem[] lightsaber = {Weapons.redlightsaber(), Weapons.bluelightsaber(), Weapons.greenlightsaber(), Weapons.purplelightsaber()};
-        ForceItem[] lightsaberHandle = {Weapons.redLightsaberHandle(), Weapons.blueLightsaberHandle(), Weapons.greenLightsaberHandle(), Weapons.purpleLightsaberHandle()};
+        ForceItem[] lightsaber = {WeaponList.RED.getForceItem(), WeaponList.GREEN.getForceItem(), WeaponList.BLUE.getForceItem(), WeaponList.PURPLE.getForceItem()};
+        ForceItem[] lightsaberHandle = {WeaponList.RED_HANDLE.getForceItem(), WeaponList.GREEN_HANDLE.getForceItem(), WeaponList.BLUE_HANDLE.getForceItem(), WeaponList.PURPLE_HANDLE.getForceItem()};
         ItemStack itemInhand = player.getInventory().getItemInMainHand();
 
         int inventorySlot = 0;

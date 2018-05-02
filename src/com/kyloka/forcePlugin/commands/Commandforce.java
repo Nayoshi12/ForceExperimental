@@ -31,6 +31,10 @@ public class Commandforce implements CommandExecutor {
 //            target.getInventory().addItem(Weapons.greenLightsaberHandle().createMaterial());
 //            target.getInventory().addItem(Weapons.purpleLightsaberHandle().createMaterial());
             target.getInventory().addItem(WeaponList.RED_HANDLE.getForceItem().createMaterial());
+            target.getInventory().addItem(WeaponList.BLUE_HANDLE.getForceItem().createMaterial());
+            target.getInventory().addItem(WeaponList.PURPLE_HANDLE.getForceItem().createMaterial());
+            target.getInventory().addItem(WeaponList.GREEN_HANDLE.getForceItem().createMaterial());
+
 
         }
         if (command.getName().equalsIgnoreCase("lightsaber") && !sender.isOp()) {

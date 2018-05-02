@@ -1,0 +1,44 @@
+EFFECT:
+  RED:
+  #Possible Effects
+  #SPEED,SLOW,FAST_DIGGING,SLOW_DIGGING,INCREASE_DAMAGE,HEAL,HARM,JUMP,CONFUSION,REGENERATION,DAMAGE_RESISTANCE,
+  #FIRE_RESISTANCE,WATER_BREATHING,INVISIBILITY,BLINDNESS,NIGHT_VISION,HUNGER, WEAKNESS, POISON, WITHER,
+  #HEALTH_BOOST,ABSORPTION,SATURATION,GLOWING,LEVITATION, LUCK, UNLUCK
+    WITHER:
+      #in millisecond
+      duration: 100
+      amplifier: 4
+    BLINDNESS:
+      duration: 100
+      amplifier: 10
+  BLUE:
+    SLOW:
+      duration: 100
+      amplifier: 4
+    POISON:
+      duration: 100
+      amplifier: 10
+  PURPLE:
+    SLOW_DIGGING:
+      duration: 100
+      amplifier: 4
+    CONFUSION:
+      duration: 100
+      amplifier: 10
+  GREEN:
+    HUNGER:
+      duration: 100
+      amplifier: 4
+    GLOWING:
+      duration: 100
+      amplifier: 10
+  YODA:
+    HARM:
+      duration: 100
+      amplifier: 4
+    LEVITATION:
+      duration: 100
+      amplifier: 10
+
+PERMISSION:
+
